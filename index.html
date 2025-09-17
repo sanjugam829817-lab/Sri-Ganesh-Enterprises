@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: #f4f4f9;
     }
     header {
       background: #222;
@@ -18,7 +18,7 @@
       text-align: center;
     }
     nav a {
-      margin: 0 10px;
+      margin: 0 15px;
       text-decoration: none;
       color: #fff;
       font-weight: bold;
@@ -26,138 +26,172 @@
     nav a:hover {
       color: yellow;
     }
-    section {
-      padding: 40px 20px;
+    .hero {
+      padding: 40px;
+      background: linear-gradient(to right, #ff9966, #ff5e62);
+      color: white;
       text-align: center;
     }
-    .hero {
-      background: lightblue;
-      border-radius: 10px;
-      padding: 40px;
-    }
     .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
+      padding: 20px;
     }
     .product {
       background: white;
-      border: 1px solid #ddd;
-      padding: 15px;
-      width: 220px;
       border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
     }
     .product img {
-      width: 100%;
-      border-radius: 10px;
+      max-width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+    .product p {
+      margin: 5px 0;
+    }
+    .product button {
+      background: #222;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background: #ff5e62;
     }
     form {
-      max-width: 400px;
-      margin: auto;
-      text-align: left;
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     form input, form textarea {
       width: 100%;
       padding: 10px;
       margin: 8px 0;
-      border: 1px solid #ccc;
       border-radius: 5px;
+      border: 1px solid #ccc;
     }
     form button {
-      background: #222;
+      background: #ff5e62;
       color: white;
       padding: 10px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-    form button:hover {
-      background: green;
-    }
     footer {
       background: #222;
-      color: #fff;
+      color: white;
       text-align: center;
-      padding: 15px;
+      padding: 10px;
       margin-top: 30px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>🙏 Sri Ganesh Enterprises 🙏</h1>
     <nav>
       <a href="#home">Home</a>
       <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
       <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Home Section -->
-  <section id="home" class="hero">
-    <h2>Sabse Behtareen Price, Sabse Behtareen Quality</h2>
-    <p>Clothes | Footwear | Men & Women | Branded & Affordable</p>
+  <section class="hero" id="home">
+    <h2>Best Quality Clothes & Footwear at Affordable Prices</h2>
+    <p>Men | Women | Branded | Stylish | Comfortable</p>
   </section>
 
   <!-- Products Section -->
   <section id="products">
-    <h2>🛍️ Our Products</h2>
+    <h2 style="text-align:center; margin-top:20px;">🛍️ Our Products</h2>
     <div class="products">
       <div class="product">
-        <img src="https://via.placeholder.com/220x220?text=Men+Shirt" alt="Men Shirt">
-        <p><b>Branded Men’s Shirt</b></p>
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=60" alt="Men Shirt">
+        <h3>Men's Casual Shirt</h3>
         <p>Price: ₹799</p>
+        <button onclick="orderNow('Men Shirt - ₹799')">Order Now</button>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/220x220?text=Ladies+Kurti" alt="Ladies Kurti">
-        <p><b>Stylish Ladies Kurti</b></p>
-        <p>Price: ₹599</p>
+        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=500&q=60" alt="Women Dress">
+        <h3>Women's Stylish Dress</h3>
+        <p>Price: ₹1299</p>
+        <button onclick="orderNow('Women Dress - ₹1299')">Order Now</button>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/220x220?text=Sports+Shoes" alt="Sports Shoes">
-        <p><b>Sports Shoes</b></p>
-        <p>Price: ₹999</p>
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=60" alt="Men Shoes">
+        <h3>Men's Sports Shoes</h3>
+        <p>Price: ₹1599</p>
+        <button onclick="orderNow('Men Shoes - ₹1599')">Order Now</button>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/220x220?text=Sandals" alt="Sandals">
-        <p><b>Ladies Sandals</b></p>
-        <p>Price: ₹499</p>
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=60" alt="Women Heels">
+        <h3>Women's Party Heels</h3>
+        <p>Price: ₹1999</p>
+        <button onclick="orderNow('Women Heels - ₹1999')">Order Now</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=500&q=60" alt="Men Jacket">
+        <h3>Men's Winter Jacket</h3>
+        <p>Price: ₹2499</p>
+        <button onclick="orderNow('Men Jacket - ₹2499')">Order Now</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=500&q=60" alt="Women Saree">
+        <h3>Women's Saree</h3>
+        <p>Price: ₹1799</p>
+        <button onclick="orderNow('Women Saree - ₹1799')">Order Now</button>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>ℹ️ About Us</h2>
-    <p>Mera Dukan Gaya Road, Parsa Station, Pillar No. 70, Left Side, Second Floor par hai. Hamare paas Branded stock milta hai aur comfort bhi best hai.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>📞 Contact Us</h2>
-    <p><b>Address:</b> Natthupur, Parsa Station, Pillar No. 70, Gaya Road</p>
-    <p><b>Mobile:</b> +91 87898 04289</p>
-    <p><b>WhatsApp:</b> +91 87898 04289</p>
-    <p><b>Email:</b> kantaa912866@gmail.com</p>
-  </section>
-
-  <!-- Order Section -->
+  <!-- Order Form -->
   <section id="order">
-    <h2>📝 Place Order / Enquiry</h2>
+    <h2 style="text-align:center; margin-top:30px;">📩 Place Your Order</h2>
     <form action="https://formsubmit.co/kantaa912866@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Order from Website">
+      <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="tel" name="mobile" placeholder="Mobile Number" required>
-      <textarea name="message" rows="4" placeholder="Product Detail / Enquiry"></textarea>
-      <button type="submit">Submit</button>
+      <input type="tel" name="phone" placeholder="Mobile Number" required>
+      <input type="email" name="email" placeholder="Your Email (optional)">
+      <textarea name="orderDetails" id="orderDetails" rows="4" placeholder="Product Details"></textarea>
+      <button type="submit">Submit Order</button>
     </form>
-    <p><i>⚡ Jaise hi aap form submit karoge, details seedhe Gmail par aa jayegi.</i></p>
+  </section>
+
+  <!-- Contact Info -->
+  <section id="contact">
+    <h2 style="text-align:center; margin-top:30px;">📞 Contact Us</h2>
+    <p style="text-align:center;">📍 Address: Natthupur, Parsa Station, Pillar No. 70, Gaya Road</p>
+    <p style="text-align:center;">📞 Mobile / WhatsApp: +91 87898 04289</p>
+    <p style="text-align:center;">✉️ Email: kantaa912866@gmail.com</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Sri Ganesh Enterprises | All Rights Reserved</p>
   </footer>
+
+  <script>
+    function orderNow(product){
+      document.getElementById("orderDetails").value = "I want to order: " + product;
+      window.location.hash = "#order";
+    }
+  </script>
+
 </body>
 </html>
